@@ -1,0 +1,10 @@
+1;Keyboard;65,33
+2;Mouse;68,46
+3;Printer;93,34
+4;Monitor;54,66
+5;Monitor;17,08
+1;Mouse;25,69
+2;Mouse;57,92
+3;Keyboard;20,05
+4;Keyboard;19,05
+5;Keyboard;85,40

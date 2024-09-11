@@ -1,12 +1,13 @@
-# University Project: Concepts of Programming
+# University Project: Fundamental Concepts of Programming
+## Politécnico Grancolombiano
 
 This repository contains a Java project developed for the university course "Concepts of Programming". The project involves creating and managing various types of data files used for testing purposes. The software generates files with sales, salesman, and product information to facilitate data processing and analysis.
 
 ## Team Members
 
-- **[Member 1 Name]**
-- **[Member 2 Name]**
-- **[Member 3 Name]**
+- **Andrés Camilo Polanía Lozano**
+- **Alex Fernando Amaya Rincón**
+- **Minelva Escobar Guerra**
 
 ## Project Description
 
@@ -49,12 +50,12 @@ The software includes two main classes:
 
 ## License
 
-This project is for educational purposes and is intended to demonstrate programming concepts learned in the "Concepts of Programming" course.
+This project is for educational purposes and is intended to demonstrate programming concepts learned in the "Fundamental Concepts of Programming" course.
 
 ## Contact
 
 For any questions or feedback, please contact:
 
-- **[Member 1 Name]**: [Member 1 Email]
-- **[Member 2 Name]**: [Member 2 Email]
-- **[Member 3 Name]**: [Member 3 Email]
+- **Andrés Camilo Polanía Lozano**: anpolania2@poligran.edu.co
+- **Alex Fernando Amaya Rincón**: alamayar@poligran.edu.co
+- **Minelva Escobar Guerra**: miescobar1@poligran.edu.co

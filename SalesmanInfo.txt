@@ -1,0 +1,10 @@
+CC;69395847;Juan;Gómez
+CC;15786380;María;Rodríguez
+CC;97206964;Ana;López
+CC;12902421;Luis;Rodríguez
+CC;51627500;Carlos;García
+CC;81841880;Juan;López
+CC;74421996;Ana;Rodríguez
+CC;20806264;Juan;López
+CC;32955362;María;Gómez
+CC;39959088;Ana;Gómez

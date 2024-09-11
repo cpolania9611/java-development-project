@@ -1,0 +1,5 @@
+1;Teclado;22,71
+2;Teclado;81,87
+3;Laptop;26,90
+4;Ratón;39,52
+5;Teclado;74,03
