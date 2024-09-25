@@ -92,14 +92,4 @@ public class GenerateInfoFiles {
 		}
 	}
 
-	/**
-	 * The main method to test file generation.
-	 * 
-	 * @param args Command line arguments (not used).
-	 */
-	public static void main(String[] args) {
-		createSalesMenFile(5, "JuanPerez", 123456789);
-		createSalesManInfoFile(10);
-		createProductsFile(5);
-	}
 }
