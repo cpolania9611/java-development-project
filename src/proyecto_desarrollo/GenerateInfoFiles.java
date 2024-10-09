@@ -1,95 +1,51 @@
 package proyecto_desarrollo;
 
-import java.io.File;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Random;
 
-/**
- * This class provides methods to generate various types of information files
- * used for testing purposes. It creates sales files for salesmen, a file
- * containing salesman information, and a file with product information.
- */
 public class GenerateInfoFiles {
+    public static void main(String[] args) {
+        String salesmenFile = "salesmen.txt";
+        String productsFile = "products.txt";
+        String salesFile = "sales.txt";
 
-	/**
-	 * Creates a sales file for a given salesman with a specified number of random
-	 * sales entries.
-	 * 
-	 * @param randomSalesCount The number of random sales entries to generate.
-	 * @param name             The name of the salesman (used to create the
-	 *                         filename).
-	 * @param id               The ID of the salesman (used to create the filename
-	 *                         and as part of the sales data).
-	 */
-	public static void createSalesMenFile(int randomSalesCount, String name, long id) {
-		try {
-			String fileName = name + "_" + id + ".txt";
-			File file = new File("data/" + fileName);
-			PrintWriter writer = new PrintWriter(new FileWriter(file, true));
-			writer.println("CC;" + id);
-			Random rand = new Random();
-			for (int i = 0; i < randomSalesCount; i++) {
-				int productID = rand.nextInt(1000);
-				int quantitySold = rand.nextInt(50) + 1;
-				writer.println(productID + ";" + quantitySold + ";");
-			}
-			writer.close();
-			System.out.println("Sales file created successfully: " + fileName);
-		} catch (IOException e) {
-			System.out.println("Error creating sales file: " + e.getMessage());
-		}
-	}
+        try {
+            generateSalesmenFile(salesmenFile);
+            generateProductsFile(productsFile);
+            generateSalesFile(salesFile);
+            System.out.println("Archivos generados con éxito.");
+        } catch (IOException e) {
+            System.err.println("Error al generar los archivos: " + e.getMessage());
+        }
+    }
 
-	/**
-	 * Creates a file containing information about salesmen.
-	 * 
-	 * @param salesmanCount The number of salesmen to generate information for.
-	 */
-	public static void createSalesManInfoFile(int salesmanCount) {
-		try {
-			File file = new File("SalesmanInfo.txt");
-			PrintWriter writer = new PrintWriter(new FileWriter("data/" + file, true));
-			String[] names = { "Juan", "Carlos", "María", "Ana", "Luis" };
-			String[] surnames = { "García", "Pérez", "Rodríguez", "López", "Gómez" };
-			Random rand = new Random();
-			for (int i = 0; i < salesmanCount; i++) {
-				String tipoDoc = "CC";
-				long numDoc = 10000000 + rand.nextInt(90000000);
-				String name = names[rand.nextInt(names.length)];
-				String surname = surnames[rand.nextInt(surnames.length)];
-				writer.println(tipoDoc + ";" + numDoc + ";" + name + ";" + surname);
-			}
-			writer.close();
-			System.out.println("Salesman information file created successfully: " + file);
-		} catch (IOException e) {
-			System.out.println("Error creating salesman information file: " + e.getMessage());
-		}
-	}
+    private static void generateSalesmenFile(String filePath) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Generar datos de vendedores
+            for (int i = 1; i <= 10; i++) {
+                writer.write("Vendedor" + i + ";" + (1000 + i) + "\n"); // Ejemplo: Vendedor1;1001
+            }
+        }
+    }
 
-	/**
-	 * Creates a file containing information about products.
-	 * 
-	 * @param productsCount The number of products to generate information for.
-	 */
-	public static void createProductsFile(int productsCount) {
-		try {
-			File file = new File("ProductsInfo.txt");
-			PrintWriter writer = new PrintWriter(new FileWriter("data/" + file, true));
-			String[] productNames = { "Laptop", "Keyboard", "Mouse", "Monitor", "Printer" };
-			Random rand = new Random();
-			for (int i = 0; i < productsCount; i++) {
-				int productID = i + 1;
-				String productName = productNames[rand.nextInt(productNames.length)];
-				double pricePerUnit = rand.nextDouble() * 100 + 10;
-				writer.println(productID + ";" + productName + ";" + String.format("%.2f", pricePerUnit));
-			}
-			writer.close();
-			System.out.println("Products file created successfully.");
-		} catch (IOException e) {
-			System.out.println("Error creating products file: " + e.getMessage());
-		}
-	}
+    private static void generateProductsFile(String filePath) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Generar datos de productos
+            for (int i = 1; i <= 5; i++) {
+                writer.write(i + ";Producto" + i + ";" + (10.0 * i) + "\n"); // Ejemplo: 1;Producto1;10.0
+            }
+        }
+    }
 
+    private static void generateSalesFile(String filePath) throws IOException {
+        Random rand = new Random();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Generar datos de ventas
+            for (int i = 0; i < 20; i++) {
+                writer.write(rand.nextInt(5) + 1 + ";" + (1 + rand.nextInt(10)) + "\n"); // Ejemplo: 1;5
+            }
+        }
+    }
 }
